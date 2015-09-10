@@ -1,0 +1,11 @@
+---
+
+- name: enable EPEL
+  yum: name=epel-release state=present
+
+- name: install pkg
+  yum: name={{ item }} state=installed
+  with_items:
+   - redis
+  notify:
+   - service redis restart
