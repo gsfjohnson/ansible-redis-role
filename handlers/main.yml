@@ -1,5 +1,5 @@
 ---
 
-- name: service redis restart
+- name: svc restart redis
   service: name=redis state=restarted enabled=yes
 
