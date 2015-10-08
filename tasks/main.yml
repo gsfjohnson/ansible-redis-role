@@ -10,6 +10,14 @@
   notify:
    - svc restart redis
 
+- name: cfg
+  lineinfile:
+    regexp: '^{{ item }}'
+    dest: '{{ redis_conf }}'
+    state: 'absent'
+  with_items:
+    - 'bind'
+
 - name: service enable, start
   service: name=redis state=started enabled=yes
 
