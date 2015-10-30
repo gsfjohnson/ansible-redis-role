@@ -2,6 +2,7 @@
 
 - name: enable epel
   yum: name=epel-release state=present
+  when: ansible_distribution == "CentOS"
 
 - name: install pkg
   yum: name={{ item }} state=installed
