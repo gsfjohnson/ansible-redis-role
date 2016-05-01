@@ -6,8 +6,7 @@
 
 - name: install pkg
   yum: name={{ item }} state=installed
-  with_items:
-   - redis
+  with_items: "{{redis_pkg_names}}"
   notify:
    - svc restart redis
 

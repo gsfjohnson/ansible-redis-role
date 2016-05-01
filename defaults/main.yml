@@ -1,3 +1,7 @@
 ---
 
 redis_conf: /etc/redis.conf
+
+redis_pkg_names:
+  - redis
+
